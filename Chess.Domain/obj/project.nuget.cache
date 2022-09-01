@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "uF1CVYgBiyM/VQp4cDwUC1csmUro/2ovj3xIBQP+/5OEdP3+cswN7QXg7ZObzgBKP15IB+YrBQ1UHlOinyZhow==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Gianluca\\source\\repos\\ChessApp\\Chess.Domain\\Chess.Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Gianluca\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Gianluca\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

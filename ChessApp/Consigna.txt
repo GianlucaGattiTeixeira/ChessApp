@@ -1,0 +1,70 @@
+﻿// AUTOR: Federico Ceccatto
+
+Desarrollar una aplicación de consola de C# (sin dependencias ni librerías ni nada raro), donde hemos de modelar algunas de las reglas del ajedrez. 
+
+·  Para ello, supongamos unas reglas de ajedrez muy simplificadas. (dejamos de lado el enroque, promoción, jaque, jaque mate, en passant, etc.) 
+
+·  Tenemos un tablero de 8x8 (64 casilleros), en las que participan dos colores (blanco y negro). Las filas se numeran de 1 a 8 y las columnas 
+	de “a” a “h” como indica la figura. El casillero (1,a) es “negro”, el (1,b) es “blanco”, y así sucesivamente hasta generar el patrón que vemos en la imagen. 
+
+·  Cada lado tiene 16 piezas, que se distribuyen como se indica: 
+
+o    Ocho Peones. 
+
+o    Dos Torres. 
+
+o    Dos Caballos. 
+
+o    Dos Alfiles. 
+
+o    Una Reina. 
+
+o    Un Rey. 
+
+·  Cada tipo de pieza tiene sus propias reglas de movimiento: 
+
+o    Los peones solo pueden avanzar hacia adelante. (para las blancas, de 1 hacia 8 y para las negras de 8 hacia 1, a menos que tengan otra pieza enfrente) 
+
+o    Las torres pueden avanzar horizontal o verticalmente, hacia atrás o adelante, tantos casilleros como quieran. (a menos que sean obstaculizadas) 
+
+o    Los caballos se pueden mover en “L”, para atrás o adelante, izquierda o derecha. Esto significa que: 
+
+	§  Pueden moverse 2 casilleros hacia atrás/adelante, y 3 a la derecha/izquierda. 
+
+	§  O, alternativamente, 3 casilleros hacia atrás/adelante, y 2 a la derecha/izquierda. 
+
+Adicionalmente, los caballos son las únicas piezas que pueden “saltear” obstáculos (otras piezas, blancas y negras) al moverse. 
+
+Los alfiles se pueden mover en diagonal, hacia atrás y adelante, tantas piezas como quieran. (a menos que sean obstaculizadas) 
+La reina puede moverse en diagonal, hacia atrás y adelante, y hacia los costados, tantas piezas como quieran. (a menos que sea obstaculizada) 
+Finalmente, el rey puede moverse a cualquiera de los casilleros que lo rodean. 
+  
+
+Tenemos cuatro objetivos: 
+
+  
+
+·  El primer paso es generar una distribución al azar del piezas en el tablero. No es necesario sea un juego posible; 
+	el único requisito es que las 32 piezas estén en el tablero, y que cada bando tenga uno de sus alfiles en un casillero “negro” y otro en un casillero “blanco”. 
+	(si uno se fija en la imagen, no hay manera de lograr que ambos estén en casilleros negros o blancos) 
+
+·  Dibujar en la consola la distribución del tablero, usando los métodos de la clase System.Console. Se pueden usar colores de fondo y frente y letras para representar el tablero. 
+
+·  Permitir que el usuario seleccione una pieza ingresando fila y columna en la consola. (por ejemplo, “2c”) 
+
+o    No importa si la pieza es blanca o negra. 
+
+o    Obviamente, si no hay pieza en ese casillero debería emitir un error y permitir que reintentemos. 
+
+  
+
+·  Una vez que “seleccionamos” una pieza, permitir otro ingreso de coordenadas como antes, con el objetivo de “mover” la pieza seleccionada a ese casillero. 
+	No es necesario “actualizar” el tablero; solo es necesario resolver si la movida es válida (para las reglas de la pieza seleccionada) y en caso contrario, 
+	explicar por qué no es posible. Algunas razones pueden ser: 
+
+o    Otra pieza en el camino. 
+
+o    No se pueden comer piezas del mismo color.  
+
+o    No es una movida válida para esta pieza. 
+
